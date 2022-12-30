@@ -13,8 +13,9 @@ const Home = ({ isOpen, setIsOpen }) => {
     <div onClick={() => setIsOpen(false)} className="container">
       <Intro></Intro>
       <div className="wrapper margin">
-        <PhotoCarousel isOpen={isOpen} setIsOpen={setIsOpen}></PhotoCarousel>
+        {" "}
         <StyleDescription></StyleDescription>
+        <PhotoCarousel isOpen={isOpen} setIsOpen={setIsOpen}></PhotoCarousel>
       </div>
       <Stages></Stages>
       <Singles></Singles>
