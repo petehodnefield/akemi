@@ -1,28 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 import { singlesData } from "../../../data/singles-data";
 import { Icon } from "@iconify/react";
-const Card = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [playPause, setPlayPause] = useState("");
-  const [currentAudio, setCurrentAudio] = useState("aquarius.mp3");
-  const player = document.getElementById("player");
-  useEffect(() => {
-    isPlaying
-      ? setPlayPause("ic:round-pause")
-      : setPlayPause("material-symbols:play-arrow-rounded");
-  }, [isPlaying]);
-
+const Card = ({
+  isPlaying,
+  togglePlayPause,
+  setCurrentAudio,
+  currentAudio,
+}) => {
+  const checkIcon = (song) => {
+    console.log(song, currentAudio);
+    if (song + ".mp3" === currentAudio) {
+      return "ic:round-pause";
+    } else {
+      return "material-symbols:play-arrow-rounded";
+    }
+  };
   return (
     <div className="singles-grid">
-      <audio
-        className="audio-player"
-        id="player"
-        src={require(`../../../assets/audio/${currentAudio}`)}
-        type="audio/mp3"
-        controls
-      ></audio>
       {singlesData.map((single) => (
-        <div className="card" key={single.title}>
+        <div
+          className="card"
+          key={single.title}
+          onClick={() => {
+            setCurrentAudio(single.audio);
+
+            togglePlayPause();
+          }}
+        >
           {" "}
           <img
             className="card-img"
@@ -30,17 +34,27 @@ const Card = () => {
           ></img>
           <div className="card-text-wrapper">
             <p className="bold p3 card-text">{single.title}</p>
-            <Icon
-              onClick={() => {
-                setIsPlaying(!isPlaying);
-                {
-                  isPlaying ? player.pause() : player.play();
-                }
-                setCurrentAudio(single.audio);
-              }}
-              className="play-pause-icon"
-              icon={playPause}
-            />
+            {single.audio === currentAudio && isPlaying ? (
+              <Icon
+                onClick={() => {
+                  setCurrentAudio(single.audio);
+
+                  togglePlayPause();
+                }}
+                className="play-pause-icon"
+                icon="ic:round-pause"
+              />
+            ) : (
+              <Icon
+                onClick={() => {
+                  setCurrentAudio(single.audio);
+
+                  togglePlayPause();
+                }}
+                className="play-pause-icon"
+                icon="material-symbols:play-arrow-rounded"
+              />
+            )}
           </div>
         </div>
       ))}

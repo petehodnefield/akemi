@@ -21,7 +21,7 @@ const Intro = () => {
       </article>{" "}
       <img
         className="intro__img box-shadow"
-        src={require("../../../assets/images/Picture2.jpg")}
+        src={require("../../../assets/images/PictureMain.jpg")}
       />
     </section>
   );
