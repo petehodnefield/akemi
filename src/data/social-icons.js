@@ -2,7 +2,12 @@ export const socialIcons = [
   {
     name: "Instagram",
     icon: "ri:instagram-fill",
-    link: "https://www.instagram.com/_akemi.music_",
+    link: "https://www.instagram.com/akemi.officiel/?hl=en ",
+  },
+  {
+    name: "TikTok",
+    icon: "ic:sharp-tiktok",
+    link: "https://www.tiktok.com/@akemi.officiel ",
   },
   {
     name: "Spotify",
@@ -14,24 +19,20 @@ export const socialIcons = [
     icon: "ic:sharp-apple",
     link: "https://music.apple.com/us/artist/akemi/1505199630",
   },
-  {
-    name: "SoundCloud",
-    icon: "mdi:soundcloud",
-    link: "https://www.instagram.com/_akemi.music_",
-  },
+
   {
     name: "YouTube",
     icon: "mingcute:youtube-fill",
-    link: "https://www.instagram.com/_akemi.music_",
+    link: "https://www.instagram.com/akemi.officiel/?hl=en ",
   },
   {
     name: "Facebook",
     icon: "ri:facebook-fill",
-    link: "https://www.instagram.com/_akemi.music_",
+    link: "https://www.instagram.com/akemi.officiel/?hl=en ",
   },
   {
     name: "Twitter",
     icon: "ri:twitter-fill",
-    link: "https://www.instagram.com/_akemi.music_",
+    link: "https://www.instagram.com/akemi.officiel/?hl=en ",
   },
 ];

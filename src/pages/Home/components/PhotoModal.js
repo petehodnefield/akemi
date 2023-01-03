@@ -22,28 +22,30 @@ const PhotoModal = ({
     <div className="photo-modal">
       <div className="modal__contents">
         <div className="modal-image-wrapper">
-          <Icon
-            onClick={() => {
-              setModalOpen(!modalOpen);
-            }}
-            className="main-img-icon"
-            icon="material-symbols:open-in-full-rounded"
-          />
-          <Icon
-            onClick={() => prevSlide()}
-            className="arrow-icon backward "
-            icon="material-symbols:arrow-back-ios-rounded"
-          />
-          <Icon
-            onClick={() => nextSlide()}
-            className="arrow-icon forward "
-            icon="material-symbols:arrow-forward-ios-rounded"
-          />
-
-          <img
-            className="modal__img"
-            src={require(`../../../assets/images/Picture${mainImageIndex}.jpg`)}
-          ></img>
+          <div className="new-wrapper">
+            {" "}
+            <Icon
+              onClick={() => {
+                setModalOpen(!modalOpen);
+              }}
+              className="main-img-icon close-icon"
+              icon="ri:close-circle-line"
+            />
+            <Icon
+              onClick={() => prevSlide()}
+              className="arrow-icon backward "
+              icon="material-symbols:arrow-circle-left-outline-rounded"
+            />
+            <Icon
+              onClick={() => nextSlide()}
+              className="arrow-icon forward "
+              icon="material-symbols:arrow-circle-right-outline-rounded"
+            />
+            <img
+              className="modal__img"
+              src={require(`../../../assets/images/Picture${mainImageIndex}.jpg`)}
+            ></img>
+          </div>
         </div>
       </div>
     </div>

@@ -3,23 +3,16 @@ import { CSSTransition } from "react-transition-group";
 import { carouselPhotos } from "../../../data/carousel-photos";
 import { Icon } from "@iconify/react";
 import PhotoModal from "../components/PhotoModal";
-const PhotoCarousel = ({ isOpen, setIsOpen }) => {
-  const [mainImageIndex, setMainImageIndex] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
-
+const PhotoCarousel = ({
+  isOpen,
+  setIsOpen,
+  setMainImageIndex,
+  mainImageIndex,
+  setModalOpen,
+  modalOpen,
+}) => {
   return (
     <section className="photo-carousel-wrapper">
-      {modalOpen ? (
-        <PhotoModal
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
-          mainImageIndex={mainImageIndex}
-          setMainImageIndex={setMainImageIndex}
-          carouselPhotos={carouselPhotos}
-        ></PhotoModal>
-      ) : (
-        ""
-      )}
       <div className="photo-carousel ">
         <div className="photo-grid box-shadow">
           {carouselPhotos.map((photo) =>
@@ -46,8 +39,8 @@ const PhotoCarousel = ({ isOpen, setIsOpen }) => {
               onClick={() => {
                 setModalOpen(!modalOpen);
               }}
-              className="main-img-icon"
-              icon="material-symbols:open-in-full-rounded"
+              className="main-img-icon open-icon"
+              icon="ic:baseline-open-in-new"
             />
           </div>
         </div>

@@ -65,6 +65,14 @@
   grid-row: 1 / 4;
   position: relative;
 }
+.main-img-div:hover {
+  overflow: hidden;
+}
+.main-img:hover {
+  transform: scale(105%);
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
 .main-img {
   width: 100%;
   height: 100%;
@@ -73,19 +81,54 @@
 }
 .main-img-icon {
   position: absolute;
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--dark);
   right: 0.5rem;
-  color: var(--dark);
-  background: var(--light);
   top: 0.5rem;
+}
+.main-img-icon:hover,
+.arrow-icon:hover {
+  opacity: 0.8;
+  transition: 125ms ease-in-out;
+}
+.open-icon {
   height: 1.5rem;
   width: 1.5rem;
+}
+.close-icon {
+  height: 2rem;
+
+  width: 2rem;
+  border-radius: 50%;
+}
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  color: var(--white);
+  background-color: var(--dark);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
+}
+
+.forward {
+  right: 0.5rem;
+}
+.backward {
+  left: 0.5rem;
 }
 .photo-modal {
   position: fixed;
   height: 100vh;
   top: 0;
-  background-color: var(--dark);
+  background: rgb(59, 49, 49);
+  background: radial-gradient(
+    circle,
+    rgba(59, 49, 49, 1) 0%,
+    rgba(135, 121, 111, 0.7889749649859944) 100%
+  );
   z-index: 10000;
   width: 100vw;
   display: flex;
@@ -104,29 +147,19 @@
 }
 .modal-image-wrapper {
   position: relative;
+  box-shadow: 2px 2px 3px var(--light);
+  width: 100%;
 }
+.new-wrapper {
+  position: relative;
+}
+
 .modal__img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.arrow-icon {
-  position: absolute;
-  top: 50%;
-  color: var(--dark);
-  height: 2rem;
-  width: 2rem;
-  cursor: pointer;
-}
-.arrow-icon:hover {
-  opacity: 0.8;
-}
-.forward {
-  right: 0.5rem;
-}
-.backward {
-  left: 0.5rem;
-}
+
 @keyframes img-appear {
   0% {
     opacity: 0;
@@ -376,6 +409,27 @@ footer {
   .card-text-wrapper {
     height: 3rem;
   }
+
+  .close-icon {
+    right: 1rem;
+    top: 1rem;
+  }
+  .arrow-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .forward {
+    right: 2rem;
+  }
+  .backward {
+    left: 2rem;
+  }
+
+  .modal-image-wrapper {
+    width: 0;
+    flex-grow: 0.6;
+  }
 }
 @media screen and (min-width: 1080px) {
   .nav-grid {
@@ -417,6 +471,10 @@ footer {
   .stages-wrapper {
     padding: 6rem 0;
   }
+  .modal-image-wrapper {
+    width: 0;
+    flex-grow: 0.5;
+  }
 }
 @media screen and (min-width: 1440px) {
   .intro-wrapper {
@@ -431,5 +489,16 @@ footer {
   }
   .photo-carousel-wrapper {
     width: 60%;
+  }
+  .modal-image-wrapper {
+    width: 0;
+    flex-grow: 0.4;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .modal-image-wrapper {
+    width: 0;
+    flex-grow: 0.3;
   }
 }
