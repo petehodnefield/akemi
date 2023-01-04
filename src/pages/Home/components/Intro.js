@@ -20,6 +20,7 @@ const Intro = () => {
         <Icon icon="fxemoji:franceflag" />
       </article>{" "}
       <img
+        alt="Akemi during a promotional shoot sitting on a bed."
         className="intro__img box-shadow"
         src={require("../../../assets/images/PictureMain.jpg")}
       />

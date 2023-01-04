@@ -20,6 +20,7 @@ const PhotoCarousel = ({
               ""
             ) : (
               <img
+                alt={photo.alt}
                 key={photo.img}
                 onClick={() => setMainImageIndex(photo.photoIndex)}
                 className={`photo-grid-item ${isOpen ? "" : ""}`}

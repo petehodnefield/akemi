@@ -5,6 +5,7 @@ const Stages = () => {
     <section className="stages-section">
       <div className="stages-wrapper margin ">
         <img
+          alt="Cover art for Stages by Akemi"
           className="stages-img m-1p5"
           src={require("../../../assets/images/stages.jpeg")}
         ></img>

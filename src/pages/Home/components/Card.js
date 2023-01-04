@@ -29,6 +29,7 @@ const Card = ({
         >
           {" "}
           <img
+            alt={single.alt}
             className="card-img"
             src={require(`../../../assets/images/${single.img}`)}
           ></img>
